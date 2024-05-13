@@ -1,0 +1,38 @@
+<div class="container mt-3">
+
+    <!-- Show Message -->
+  
+    <div *ngIf="messageSuccess" class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>{{messageSuccess}}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  
+      <table class="table  table-bordered" >
+          <thead>
+            <tr>
+              <th scope="col">ID_GROUPE</th>
+              <th scope="col">ID_FILIERE</th>
+              <th scope="col">ID</th>
+              <th scope="col">NOM_GROUPE</th>
+              <th scope="col"> Edits</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor=" let us of readData ">
+            <th scope="row"> {{us.ID_GROUPE}} </th>
+            <td> {{us.ID_FILIERE}} </td>
+            <td> {{us.ID}} </td>
+            <td> {{us.NOM_GROUPE}} </td>
+            
+            <td> <button class="btn btn-sm btn-danger" (click)="deleteData(us.ID_GROUPE)" > Supprimer </button> 
+          &nbsp;
+            <a [routerLink]= "['/groupe/create-groupe',us.ID_GROUPE]" class="btn btn-sm btn-success" >Update</a>
+            </td>
+              </tr>
+            
+          </tbody>
+        </table>
+  
+  </div>
+

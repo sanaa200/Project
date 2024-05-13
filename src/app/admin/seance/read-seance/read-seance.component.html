@@ -1,0 +1,36 @@
+<div class="container mt-3">
+
+    <!-- Show Message -->
+  
+    <div *ngIf="messageSuccess" class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>{{messageSuccess}}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  
+      <table class="table  table-bordered" >
+          <thead>
+            <tr>
+              <th scope="col">ID_SEANCE</th>
+              <th scope="col">ID_MODULE</th>
+              <th scope="col"> Edits</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor=" let us of readData ">
+            <th scope="row"> {{us.ID_SEANCE}} </th>
+            <td> {{us.ID_MODULE}} </td>
+            
+            <td> <button class="btn btn-sm btn-danger" (click)="deleteData(us.ID_SEANCE)" > Supprimer </button> 
+          &nbsp;
+            <a [routerLink]= "['/seance/create-seance',us.ID_SEANCE]" class="btn btn-sm btn-success" >Update</a>
+            </td>
+              </tr>
+            
+          </tbody>
+        </table>
+  
+  </div>
+
+
+

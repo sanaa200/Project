@@ -1,0 +1,54 @@
+<div class="container mt-3">
+<!-- Show Erreur -->
+    <div *ngIf="messageErreur" class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>{{messageErreur}}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+      <!-- Show Erreur -->
+    <div *ngIf="messageSuccess" class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>{{messageSuccess}}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+<form [formGroup]="ensForm" >
+
+    <div class="col-lg-4 mt-2">
+        <input type="text" class="form-control" formControlName="id" placeholder="Entrer Votre ID_ENS ">
+    </div>
+
+    <div class="col-lg-4 mt-2">
+        <input type="text" class="form-control" formControlName="ida" placeholder="Entrer Votre ADM_ID ">
+    </div>
+
+    <div class="col-lg-4 mt-2">
+        <input type="text" class="form-control"  formControlName="nom" placeholder="Entrer Votre Nom ">
+    </div>
+
+    <div class="col-lg-4 mt-2">
+        <input type="text" class="form-control"  formControlName="prenom" placeholder="Entrer Votre Prenom ">
+    </div>
+
+    <div class="col-lg-4 mt-2">
+        <input type="email" class="form-control"  formControlName="email" placeholder="Entrer Votre Email ">
+    </div>
+
+    <div class="col-lg-4 mt-2">
+        <input type="password" class="form-control"  formControlName="password" placeholder="Entrer Votre Password ">
+    </div>
+
+    <div class="col-lg-4 mt-2">
+        <input type="text" class="form-control"  formControlName="role" placeholder="Entrer Votre Role ">
+    </div>
+
+    <div class="col-lg-4 mt-2" *ngIf="!getparamid">   
+    <button type="submit" class="btn btn-primary btn-sm" (click)="ensSubmit()"> Ajouter </button>
+    </div>
+
+    <div class="col-lg-4 mt-2" *ngIf="getparamid">   
+        <button type="submit" class="btn btn-dark btn-sm" (click)="updateSubmit()"> Update </button>
+        </div>
+
+</form>
+
+</div>

@@ -1,0 +1,29 @@
+.home {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .home img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  .homecontent {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    padding-top: 50px;
+  }
+  
+  .home h1 {
+    font-size: 36px;
+    font-weight: bold;
+  }

@@ -1,0 +1,100 @@
+<!-- <div class="container mt-5">
+    <form [formGroup]="signupForm" (ngSubmit)="signupSubmit()"> -->
+        <!-- erreur messge lorsque un champs vide -->
+     <!-- <div *ngIf="messageShow">
+        <p class="text-danger"> {{messageErreur}} </p>
+     </div>
+        
+     
+     <div class="mb-3">
+        <input type="text" class="form-control" formControlName="id" placeholder="Entrer Votre ADM_ID">
+      </div>
+
+        <div class="mb-3">
+          <input type="text" class="form-control" formControlName="nom" placeholder="Entrer Votre Nom">
+        </div>
+        
+        <div class="mb-3">
+            <input type="text" class="form-control" formControlName="prenom" placeholder="Entrer Votre Prenom">
+          </div>
+          
+        <div class="mb-3">
+            <input type="email" class="form-control" formControlName="email" placeholder="Entrer Votre Email">
+          </div>
+
+        <div class="mb-3">
+          <input type="password" class="form-control" formControlName="password" placeholder="Entrer Votre Password">
+        </div>
+
+        <div class="mb-3">
+            <input type="text" class="form-control" formControlName="role" placeholder="Entrer Votre Role ">
+          </div>
+
+        <button type="submit" class="btn btn-primary" >Signup</button>
+      </form>
+</div> -->
+
+<body>
+
+    <div class="container">
+       <div class="img">
+         <img src="../../assets/bg.svg">
+       </div>
+       <div class="login-content">
+          <form  [formGroup]="signupForm" (ngSubmit)="signupSubmit()" >
+             <h5>WELCOME</h5>
+             <!-- erreur messge lorsque un champs vide -->
+      <div *ngIf="messageShow">
+         <p class="text-danger"> {{messageErreur}} </p>
+      </div>
+            <img src="../../assets/avatar.svg">
+ 
+                <div class="input-div one">
+                   <div class="i">
+                         <i class="fas fa-user"></i>
+                   </div>
+                   <div class="div">
+                         <input type="text" class="form-control" formControlName="nom" placeholder="Nom">
+                   </div>
+                </div>
+ 
+                <div class="input-div one">
+                   <div class="i">
+                         <i class="fas fa-user"></i>
+                   </div>
+                   <div class="div">
+                         <input type="text" class="form-control" formControlName="prenom" placeholder="Prénom">
+                   </div>
+                </div>
+ 
+                <div class="input-div one">
+                   <div class="i">
+                          <i class="fas fa-envelope"></i>
+ 
+                   </div>
+                   <div class="div">
+                         <input type="email" class="form-control" formControlName="email" placeholder="Email">
+                   </div>
+                </div>
+ 
+                <div class="input-div pass">
+                 <div class="i"> 
+                    <i class="fas fa-lock"></i>
+                 </div>
+                 <div class="div">
+                    <input type="password" class="form-control" formControlName="password" placeholder="Password">
+                 </div>
+              </div>
+ 
+                <div class="input-div one">
+                   <div class="i">
+                         <i class="fas fa-user"></i>
+                   </div>
+                   <div class="div">
+                         <input type="text" class="form-control" formControlName="role" placeholder=" Role ">
+                   </div>
+                </div>
+                <button type="submit" class="btn btn-primary" >S'inscrire</button>
+             </form>
+         </div>
+     </div>

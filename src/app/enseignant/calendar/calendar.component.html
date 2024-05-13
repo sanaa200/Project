@@ -1,0 +1,31 @@
+<div class="row text-center">
+    <div class="col-md-4">
+      <div class="btn-group mt-3">
+
+<div class="btn btn-success btn-sm" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="closeOpenMonthViewDay()"> Precedent </div>
+<div class="btn btn-outline-secondary " mwlCalendarToday [(viewDate)]="viewDate"> Aujourd'hui </div>
+<div class="btn btn-success btn-sm" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="closeOpenMonthViewDay()"> Prochain </div>
+
+    </div>
+    </div>
+
+  <div class="col-md-4">
+      <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'fr' }}</h3>
+  </div>
+     
+  <div class="col-md-4">
+    <div class="btn-group mt-3">
+
+<div class="btn btn-success btn-sm" (click)="setView(CalendarView.Month)" [class.selected]="view == CalendarView.Month"> Mois </div>
+
+<div  class="btn btn-outline-secondary" (click)="setView(CalendarView.Week)" [class.selected]="view == CalendarView.Week"> Semainne </div>
+
+<div class="btn btn-success btn-sm" (click)="setView(CalendarView.Day)" [class.selected]="view == CalendarView.Day"> Jour </div>
+  </div> 
+ </div>
+</div>
+    <div  [ngSwitch]="view" class="mt-3">
+    <mwl-calendar-month-view *ngSwitchCase="CalendarView.Month" [viewDate]="viewDate" [events]="events" [excludeDays]="[0]"  locale="fr" [activeDayIsOpen]="activeDayIsOpen" (dayClicked)="dayClicked($event.day)" (eventClicked)="eventClicked($event)" (eventTimesChanged)="eventTimesChanged($event)" [refresh]="refresh"></mwl-calendar-month-view>
+    <mwl-calendar-week-view *ngSwitchCase="CalendarView.Week" [viewDate]="viewDate" [events]="events" [excludeDays]="[0]" locale="fr" [dayStartHour]="8" [dayEndHour]="19" (eventClicked)="eventClicked($event)" (eventTimesChanged)="eventTimesChanged($event)" [refresh]="refresh"></mwl-calendar-week-view>
+    <mwl-calendar-day-view *ngSwitchCase="CalendarView.Day" [viewDate]="viewDate" [events]="events"  locale="fr" [dayStartHour]="8" [dayEndHour]="19" (eventClicked)="eventClicked($event)" (eventTimesChanged)="eventTimesChanged($event)" [refresh]="refresh"></mwl-calendar-day-view>
+    </div>

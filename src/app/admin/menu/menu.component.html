@@ -1,0 +1,25 @@
+<section class="course">
+    <div class="container">
+        <h5 class="mt-1 fas fa-cog text-warning" class="text-center" > LES TACHES :</h5>
+        <div class="row mt-2" >
+            <div class="col-lg-3 mb-4" *ngFor="let tache of  taches ">
+                <div class="box shadow-sm mt-2">
+                    <img src="{{tache.image}}" width="100%" >
+                  <h6 class="mt-1">{{tache.name}}</h6>
+<button *ngIf="tache.name === 'GESTION DES ENSEIGNANTS'" class="btn btn-dark btn-sm mt-2" (click)="navigateToEns()">Watch now</button>
+<button *ngIf="tache.name === 'GESTION DES ETUDIANTS'" class="btn btn-dark btn-sm mt-2" (click)="navigateToEtudiant()">Watch now</button>
+<button *ngIf="tache.name === 'GESTION DES GROUPES'" class="btn btn-dark btn-sm mt-2" (click)="navigateToGroupe()">Watch now</button>
+<button *ngIf="tache.name === 'GESTION DES FILIERES'" class="btn btn-dark btn-sm mt-2" (click)="navigateToFiliere()">Watch now</button>
+<button *ngIf="tache.name === 'GESTION DES MATIERES'" class="btn btn-dark btn-sm mt-2" (click)="navigateToModule()">Watch now</button>
+<button *ngIf="tache.name === 'GESTION DES SEANCES'" class="btn btn-dark btn-sm mt-2" (click)="navigateToSeance()">Watch now</button>
+<button *ngIf="tache.name === 'GESTION DES SALLES'" class="btn btn-dark btn-sm mt-2" (click)="navigateToSalle()">Watch now</button>
+                </div>
+    
+            </div>
+        </div>
+    <router-outlet></router-outlet>
+
+    </div>
+    </section>
+
+

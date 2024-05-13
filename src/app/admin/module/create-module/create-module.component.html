@@ -1,0 +1,42 @@
+
+<div class="container mt-3">
+    <!-- Show Erreur -->
+        <div *ngIf="messageErreur" class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>{{messageErreur}}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+    
+          <!-- Show Erreur -->
+        <div *ngIf="messageSuccess" class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>{{messageSuccess}}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+    
+    <form [formGroup]="moduleForm" >
+
+        <!-- <div class="col-lg-4 mt-2">
+            <input type="text" class="form-control" formControlName="id" placeholder="Entrer Votre ID_Module ">
+        </div> -->
+    
+        <div class="col-lg-4 mt-2">
+            <input type="text" class="form-control"  formControlName="idf" placeholder="Entrer Votre ID filiere ">
+        </div>
+    
+        <div class="col-lg-4 mt-2">
+            <input type="text" class="form-control"  formControlName="nom" placeholder="Entrer le Nom de Module ">
+        </div>
+    
+       
+        <div class="col-lg-4 mt-2" *ngIf="!getparamid">   
+        <button type="submit" class="btn btn-primary btn-sm" (click)="moduleSubmit()"> Ajouter </button>
+        </div>
+    
+        <div class="col-lg-4 mt-2" *ngIf="getparamid">   
+            <button type="submit" class="btn btn-dark btn-sm" (click)="updateSubmit()"> Update </button>
+            </div>
+    
+    </form>
+    
+    </div>
+    
+

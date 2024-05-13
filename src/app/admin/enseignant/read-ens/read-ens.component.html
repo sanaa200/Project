@@ -1,0 +1,37 @@
+<div class="container mt-3">
+
+  <!-- Show Message -->
+
+  <div *ngIf="messageSuccess" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>{{messageSuccess}}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+    <table class="table  table-bordered" >
+        <thead>
+          <tr>
+            <th scope="col">ENS_ID</th>
+            <th scope="col">ADM_ID</th>
+            <th scope="col">NOM</th>
+            <th scope="col">PRENOM</th>
+            <th scope="col">EMAIL</th>
+            <th scope="col"> Edits</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor=" let us of readData ">
+          <th scope="row"> {{us.ID}} </th>
+          <td> {{us.ADM_ID}} </td>
+          <td> {{us.NOM}} </td>
+          <td> {{us.PRENOM}} </td>
+          <td> {{us.EMAIL}} </td>
+          <td> <button class="btn btn-sm btn-danger" (click)="deleteData(us.ID)" > Supprimer </button> 
+        &nbsp;
+          <a [routerLink]= "['/ens/create-ens',us.ID]" class="btn btn-sm btn-success" >Update</a>
+          </td>
+            </tr>
+          
+        </tbody>
+      </table>
+
+</div>

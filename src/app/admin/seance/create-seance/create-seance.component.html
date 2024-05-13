@@ -1,0 +1,43 @@
+
+<div class="container mt-3">
+    <!-- Show Erreur -->
+        <div *ngIf="messageErreur" class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>{{messageErreur}}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+    
+          <!-- Show Erreur -->
+        <div *ngIf="messageSuccess" class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>{{messageSuccess}}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+    
+    <form [formGroup]="seanceForm" >
+
+        <!-- <div class="col-lg-4 mt-2">
+            <input type="text" class="form-control" formControlName="id" placeholder="Entrer Votre ID_Module ">
+        </div> -->
+    
+        <div class="col-lg-4 mt-2">
+            <input type="text" class="form-control"  formControlName="ids" placeholder="Entrer Votre ID seance ">
+        </div>
+    
+        <div class="col-lg-4 mt-2">
+            <input type="text" class="form-control"  formControlName="idm" placeholder="Entrer  ID Module ">
+        </div>
+    
+       
+        <div class="col-lg-4 mt-2" *ngIf="!getparamid">   
+        <button type="submit" class="btn btn-primary btn-sm" (click)="seanceSubmit()"> Ajouter </button>
+        </div>
+    
+        <div class="col-lg-4 mt-2" *ngIf="getparamid">   
+            <button type="submit" class="btn btn-dark btn-sm" (click)="updateSubmit()"> Update </button>
+            </div>
+    
+    </form>
+    
+    </div>
+    
+
+
